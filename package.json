@@ -9,22 +9,24 @@
   "scripts": {
     "dev:client": "parcel lib/client/index.html --out-dir build --no-hmr",
     "dev:server": "nodemon lib/server",
-	"dev": "concurrently --kill-others \"npm run dev:client\" \"npm run dev:server\"",
+    "dev": "concurrently --kill-others \"npm run dev:client\" \"npm run dev:server\"",
     "build": "NODE_ENV=production parcel build lib/client/index.html --out-dir build",
-	"run": "pm2 lib/server/index.js",
-	"monit": "pm2 monit",
-	"kill": "pm2 kill",
-	"reload": "pmw reload lib/server/index.js"
+    "run": "pm2 lib/server/index.js",
+    "monit": "pm2 monit",
+    "kill": "pm2 kill",
+    "reload": "pmw reload lib/server/index.js"
   },
   "sw-precache": {
     "maximumFileSizeToCacheInBytes": 655360000
   },
   "devDependencies": {
-    "@babel/core": "^7.5.0",
+    "@babel/core": "^7.0.0-0",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.0",
+    "@babel/preset-typescript": "^7.3.3",
     "babel": "^6.23.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.1",
@@ -36,10 +38,13 @@
     "eslint-plugin-react": "^7.14.2",
     "nodemon": "^1.19.1",
     "parcel": "^1.12.3",
+    "parcel-plugin-subresource-integrity": "^0.3.1",
     "parcel-plugin-sw-precache": "^1.1.1",
-	"parcel-plugin-subresource-integrity": "^0.3.1",
     "pm2": "^3.5.1",
-    "sass": "^1.22.5"
+    "sass": "^1.22.5",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -53,9 +58,8 @@
     "json2csv": "^4.5.2",
     "lodash": "^4.17.15",
     "morgan": "^1.9.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
+    "preact": "^8.5.1",
+    "preact-router": "^2.6.1",
     "regenerator-runtime": "^0.13.3",
     "winston": "^3.2.1"
   }
